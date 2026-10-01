@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SONÁ — Recomendador musical</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="fondo fondo-1"></div>
+  <div class="fondo fondo-2"></div>
+
+  <main class="app">
+    <header class="encabezado">
+      <div class="marca"><span>SONÁ</span><small>RECOMENDADOR MUSICAL</small></div>
+      <button id="modo" class="icono" type="button" aria-label="Cambiar modo">☾</button>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">ASISTENTE MUSICAL</p>
+      <h1>Encontrá una canción<br><em>que te guste.</em></h1>
+      <p class="bajada">Elegí un género y contame qué estás buscando. También podés pegar una parte de una letra o escribir el nombre de un artista.</p>
+    </section>
+
+    <section class="panel principal-panel">
+      <div class="panel-titulo">
+        <div>
+          <span class="numero">01</span>
+          <h2>Recomendame canciones</h2>
+        </div>
+        <span class="nota">En español</span>
+      </div>
+
+      <div class="generos" id="generos">
+        <button type="button" data-genero="todos" class="activo">Cualquiera</button>
+        <button type="button" data-genero="reggaeton">Reggaetón</button>
+        <button type="button" data-genero="trap">Trap</button>
+        <button type="button" data-genero="rock">Rock</button>
+        <button type="button" data-genero="pop">Pop</button>
+        <button type="button" data-genero="cumbia">Cumbia</button>
+        <button type="button" data-genero="rap">Rap</button>
+        <button type="button" data-genero="urbano">Urbano</button>
+        <button type="button" data-genero="indie">Indie</button>
+      </div>
+
+      <label for="detalle">Contame algo más <b>*</b></label>
+      <div class="campo-grande">
+        <textarea id="detalle" rows="4" placeholder="Ej.: quiero algo parecido a WOS, algo triste, o pegá una parte de una letra..."></textarea>
+        <span class="contador" id="contador">0</span>
+      </div>
+      <p class="ayuda">Cuanto más me cuentes, mejor puedo orientar la búsqueda.</p>
+
+      <div class="acciones">
+        <button id="recomendar" class="btn btn-principal" type="button">Recomendar canciones <span>→</span></button>
+        <button id="buscar" class="btn btn-secundario" type="button">Buscar esta canción</button>
+      </div>
+      <p id="mensaje" class="mensaje" aria-live="polite"></p>
+    </section>
+
+    <section class="panel resultados-panel">
+      <div class="panel-titulo">
+        <div>
+          <span class="numero">02</span>
+          <h2>Resultados</h2>
+        </div>
+        <button id="limpiar" class="texto-btn" type="button">Limpiar</button>
+      </div>
+      <div id="resultados" class="resultados">
+        <div class="estado-inicial">
+          <div class="disco">♪</div>
+          <p>Todavía no hay resultados.</p>
+          <span>Escribí un artista, una canción o una parte de una letra.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel historial-panel">
+      <div class="panel-titulo">
+        <div>
+          <span class="numero">03</span>
+          <h2>Historial</h2>
+        </div>
+        <span class="nota">Esta sesión</span>
+      </div>
+      <div id="historial" class="historial"></div>
+    </section>
+
+    <footer>
+      <strong>SONÁ</strong> funciona directamente desde <strong>index.html</strong>. No necesita Gemini, servidores ni claves.
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
